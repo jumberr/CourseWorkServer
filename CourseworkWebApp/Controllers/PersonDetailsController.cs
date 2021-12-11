@@ -19,23 +19,15 @@ namespace CourseworkWebApp.Controllers
         public PersonDetailsController(IRepository<Person> Person, PersonService ProductService)  
         {  
             _personService = ProductService;  
-            _Person = Person;  
-  
+            _Person = Person;
         }  
+        
         //Add Person  
         [HttpPost("AddPerson")]  
         public async Task AddPerson([FromBody] Person person)  
         {  
-            // try  
-            // {  
-                await _personService.AddPerson(person);  
-                //return true;  
-            // }  
-            // catch (Exception)  
-            // {  
-            //
-            //     return false;  
-            // }  
+
+                await _personService.AddPerson(person);
         }  
         //Delete Person  
         [HttpDelete("DeletePerson")]  
@@ -66,10 +58,10 @@ namespace CourseworkWebApp.Controllers
             }  
         }  
         //GET All Person by Name  
-        [HttpGet("GetAllPersonByName")]  
-        public Object GetAllPersonByName(string UserEmail)  
+        [HttpGet("GetPersonByName")]  
+        public Object GetPersonByName(string Username)  
         {  
-            var data = _personService.GetPersonByUserName(UserEmail);  
+            var data = _personService.GetPersonByUserName(Username);  
             var json = JsonConvert.SerializeObject(data, Formatting.Indented,  
                 new JsonSerializerSettings()  
                 {  

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tzzad\\RiderProjects\\CourseworkWebApp\\BLL\\BLL.csproj": {}
+    "D:\\CourseWorkServer\\BLL\\BLL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tzzad\\RiderProjects\\CourseworkWebApp\\BLL\\BLL.csproj": {
+    "D:\\CourseWorkServer\\BLL\\BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tzzad\\RiderProjects\\CourseworkWebApp\\BLL\\BLL.csproj",
+        "projectUniqueName": "D:\\CourseWorkServer\\BLL\\BLL.csproj",
         "projectName": "BLL",
-        "projectPath": "C:\\Users\\tzzad\\RiderProjects\\CourseworkWebApp\\BLL\\BLL.csproj",
-        "packagesPath": "C:\\Users\\tzzad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tzzad\\RiderProjects\\CourseworkWebApp\\BLL\\obj\\",
+        "projectPath": "D:\\CourseWorkServer\\BLL\\BLL.csproj",
+        "packagesPath": "C:\\Users\\forfp\\.nuget\\packages\\",
+        "outputPath": "D:\\CourseWorkServer\\BLL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\tzzad\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\forfp\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -26,8 +26,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\tzzad\\RiderProjects\\CourseworkWebApp\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\tzzad\\RiderProjects\\CourseworkWebApp\\DAL\\DAL.csproj"
+              "D:\\CourseWorkServer\\DAL\\DAL.csproj": {
+                "projectPath": "D:\\CourseWorkServer\\DAL\\DAL.csproj"
               }
             }
           }
@@ -77,17 +77,17 @@
         }
       }
     },
-    "C:\\Users\\tzzad\\RiderProjects\\CourseworkWebApp\\DAL\\DAL.csproj": {
+    "D:\\CourseWorkServer\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tzzad\\RiderProjects\\CourseworkWebApp\\DAL\\DAL.csproj",
+        "projectUniqueName": "D:\\CourseWorkServer\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\tzzad\\RiderProjects\\CourseworkWebApp\\DAL\\DAL.csproj",
-        "packagesPath": "C:\\Users\\tzzad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tzzad\\RiderProjects\\CourseworkWebApp\\DAL\\obj\\",
+        "projectPath": "D:\\CourseWorkServer\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\forfp\\.nuget\\packages\\",
+        "outputPath": "D:\\CourseWorkServer\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\tzzad\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\forfp\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
