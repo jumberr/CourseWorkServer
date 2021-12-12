@@ -21,9 +21,12 @@ namespace BLL.Services
             return _person.GetAll().ToList();
         }  
 
-        public Person GetPersonByUserName(string UserName)  
-        {  
-            return _person.GetAll().FirstOrDefault(x => x.UserName == UserName);  
+        public Person GetPersonByCredentials(Person person)
+        {
+            var Username = person.UserName;
+            var pass = person.Password;
+            
+            return _person.GetAll().FirstOrDefault(x => x.UserName == Username && x.Password == pass);  
         }  
 
         public async Task AddPerson(Person Person)

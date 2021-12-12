@@ -10,3 +10,15 @@ C:\Users\tzzad\RiderProjects\CourseworkWebApp\DAL\obj\Debug\net5.0\DAL.csproj.Co
 C:\Users\tzzad\RiderProjects\CourseworkWebApp\DAL\obj\Debug\net5.0\DAL.dll
 C:\Users\tzzad\RiderProjects\CourseworkWebApp\DAL\obj\Debug\net5.0\ref\DAL.dll
 C:\Users\tzzad\RiderProjects\CourseworkWebApp\DAL\obj\Debug\net5.0\DAL.pdb
+D:\CourseWorkServer\DAL\bin\Debug\net5.0\DAL.deps.json
+D:\CourseWorkServer\DAL\bin\Debug\net5.0\DAL.dll
+D:\CourseWorkServer\DAL\bin\Debug\net5.0\ref\DAL.dll
+D:\CourseWorkServer\DAL\bin\Debug\net5.0\DAL.pdb
+D:\CourseWorkServer\DAL\obj\Debug\net5.0\DAL.csproj.AssemblyReference.cache
+D:\CourseWorkServer\DAL\obj\Debug\net5.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\CourseWorkServer\DAL\obj\Debug\net5.0\DAL.AssemblyInfoInputs.cache
+D:\CourseWorkServer\DAL\obj\Debug\net5.0\DAL.AssemblyInfo.cs
+D:\CourseWorkServer\DAL\obj\Debug\net5.0\DAL.csproj.CoreCompileInputs.cache
+D:\CourseWorkServer\DAL\obj\Debug\net5.0\DAL.dll
+D:\CourseWorkServer\DAL\obj\Debug\net5.0\ref\DAL.dll
+D:\CourseWorkServer\DAL\obj\Debug\net5.0\DAL.pdb

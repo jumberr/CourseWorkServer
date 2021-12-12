@@ -25,9 +25,8 @@ namespace CourseworkWebApp.Controllers
         //Add Person  
         [HttpPost("AddPerson")]  
         public async Task AddPerson([FromBody] Person person)  
-        {  
-
-                await _personService.AddPerson(person);
+        {
+            await _personService.AddPerson(person);
         }  
         //Delete Person  
         [HttpDelete("DeletePerson")]  
@@ -57,19 +56,27 @@ namespace CourseworkWebApp.Controllers
                 return false;  
             }  
         }  
+        
+        [HttpPost("GetPersonByName")]
+        public bool GetPersonByName([FromBody] Person person)
+        {
+            var data = _personService.GetPersonByCredentials(person);
+            return data != null;
+        }
+        
         //GET All Person by Name  
-        [HttpGet("GetPersonByName")]  
-        public Object GetPersonByName(string Username)  
-        {  
-            var data = _personService.GetPersonByUserName(Username);  
-            var json = JsonConvert.SerializeObject(data, Formatting.Indented,  
-                new JsonSerializerSettings()  
-                {  
-                    ReferenceLoopHandling =  ReferenceLoopHandling.Ignore  
-                }  
-            );  
-            return json;  
-        }  
+        //[HttpGet("GetPersonByName")]  
+        //public Object GetPersonByName(string Username)  
+        //{  
+        //    var data = _personService.GetPersonByUserName(Username);  
+        //    var json = JsonConvert.SerializeObject(data, Formatting.Indented,  
+        //        new JsonSerializerSettings()  
+        //        {  
+        //            ReferenceLoopHandling =  ReferenceLoopHandling.Ignore  
+        //        }  
+        //    );  
+        //    return json;  
+        //}  
   
         //GET All Person  
         [HttpGet("GetAllPersons")]  
