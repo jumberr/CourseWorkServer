@@ -13,16 +13,16 @@ namespace DAL.Repository
         {  
             _dbContext = applicationDbContext;  
         }  
-        public async Task Create(Person _object)  
+        public async Task Create(Person o)  
         {  
-            var obj = await _dbContext.Persons.AddAsync(_object);  
-            _dbContext.SaveChanges();  
+            var obj = await _dbContext.Persons.AddAsync(o);  
+            await _dbContext.SaveChangesAsync();  
         }  
   
-        public void Delete(Person _object)  
+        public async Task Delete(Person o)  
         {  
-            _dbContext.Remove(_object);  
-            _dbContext.SaveChanges();  
+            _dbContext.Remove(o);  
+            await _dbContext.SaveChangesAsync();  
         }  
   
         public IEnumerable<Person> GetAll()
@@ -30,10 +30,10 @@ namespace DAL.Repository
             return _dbContext.Persons.ToList();
         }
 
-        public void Update(Person _object)  
+        public async Task Update(Person o)  
         {  
-            _dbContext.Persons.Update(_object);  
-            _dbContext.SaveChanges();  
+            _dbContext.Persons.Update(o);  
+            await _dbContext.SaveChangesAsync();  
         }  
     }
 }

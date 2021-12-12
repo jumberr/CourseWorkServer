@@ -5,12 +5,12 @@ namespace DAL.Interfaces
 {
     public interface IRepository<T>
     {
-        public Task Create(T _object);  
+        public Task Create(T o);  
   
-        public void Update(T _object);  
+        public Task Update(T o);  
   
         public IEnumerable<T> GetAll();  
         
-        public void Delete(T _object);  
+        public Task Delete(T o);  
     }
 }

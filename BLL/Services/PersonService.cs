@@ -14,32 +14,32 @@ namespace BLL.Services
         public PersonService(IRepository<Person> perosn)  
         {  
             _person = perosn;  
-        }  
+        }
+
+        public async Task AddPerson(Person person)
+        {
+            await _person.Create(person);
+        }
+
+        public Person GetPersonByCredentials(Person person)
+        {
+            var username = person.UserName;
+            var pass = person.Password;
+            
+            return _person.GetAll().FirstOrDefault(x => x.UserName == username && x.Password == pass);  
+        }
 
         public IEnumerable<Person> GetAllPersons()
         {
             return _person.GetAll().ToList();
-        }  
+        }
 
-        public Person GetPersonByCredentials(Person person)
-        {
-            var Username = person.UserName;
-            var pass = person.Password;
-            
-            return _person.GetAll().FirstOrDefault(x => x.UserName == Username && x.Password == pass);  
-        }  
-
-        public async Task AddPerson(Person Person)
-        {
-            await _person.Create(Person);
-        }  
-
-        public bool DeletePerson(string UserName)  
+        public bool DeletePerson(string username)  
         {
             try  
             {  
-                var DataList = _person.GetAll().Where(x => x.UserName == UserName).ToList();  
-                foreach (var item in DataList)  
+                var dataList = _person.GetAll().Where(x => x.UserName == username).ToList();  
+                foreach (var item in dataList)  
                 {  
                     _person.Delete(item);  
                 }  
@@ -51,13 +51,13 @@ namespace BLL.Services
             }  
   
         }  
-        //Update Person Details  
+
         public bool UpdatePerson(Person person)  
         {  
             try  
             {  
-                var DataList = _person.GetAll().ToList();  
-                foreach (var item in DataList)  
+                var dataList = _person.GetAll().ToList();  
+                foreach (var item in dataList)  
                 {  
                     _person.Update(item);  
                 }  
