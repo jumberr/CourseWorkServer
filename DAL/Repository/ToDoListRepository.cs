@@ -9,19 +9,19 @@ namespace DAL.Repository
     public class ToDoListRepository : IRepository<ToDo>
     {
         ApplicationDbContext _dbContext;  
-        public ToDoListRepository(ApplicationDbContext applicationDbContext)  
-        {  
-            _dbContext = applicationDbContext;  
+        public ToDoListRepository(ApplicationDbContext applicationDbContext)
+        {
+            _dbContext = applicationDbContext;
         }
         public async Task Create(ToDo o)
         {
-            var obj = await _dbContext.ToDos.AddAsync(o);  
-            await _dbContext.SaveChangesAsync(); 
+            await _dbContext.ToDos.AddAsync(o);
+            await _dbContext.SaveChangesAsync();
         }
 
         public async Task Update(ToDo o)
         {
-            _dbContext.Remove(o);  
+            _dbContext.Update(o);  
             await _dbContext.SaveChangesAsync();
         }
 
@@ -32,7 +32,7 @@ namespace DAL.Repository
 
         public async Task Delete(ToDo o)
         {
-            _dbContext.ToDos.Update(o);  
+            _dbContext.ToDos.Remove(o);  
             await _dbContext.SaveChangesAsync(); 
         }
     }

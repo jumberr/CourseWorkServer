@@ -4,38 +4,44 @@ using BLL.Services;
 using DAL.Entities;
 using DAL.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 
 namespace CourseworkWebApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PersonDetailsController : ControllerBase
+    public class PersonController : ControllerBase
     {
         private readonly PersonService _personService;  
   
         private readonly IRepository<Person> _Person;  
   
-        public PersonDetailsController(IRepository<Person> Person, PersonService ProductService)  
+        public PersonController(IRepository<Person> Person, PersonService ProductService)  
         {  
             _personService = ProductService;  
             _Person = Person;
         }  
         
-        [HttpPost("AddPerson")]  
+        [HttpPost("Add")]  
         public async Task AddPerson([FromBody] Person person)  
         {
             await _personService.AddPerson(person);
         }
 
-        [HttpPost("GetPersonByName")]
+        [HttpGet("Get")]
         public bool GetPersonByName([FromBody] Person person)
         {
             var data = _personService.GetPersonByCredentials(person);
             return data != null;
         }
+        
+        [HttpGet("GetID")]
+        public int GetPersonId([FromBody] Person person)
+        {
+            var data = _personService.GetPersonId(person);
+            return data;
+        }
 
-        [HttpDelete("DeletePerson")]  
+        [HttpDelete("Delete")]  
         public bool DeletePerson(string UserEmail)  
         {  
             try  
@@ -49,7 +55,7 @@ namespace CourseworkWebApp.Controllers
             }  
         }
 
-        [HttpPut("UpdatePerson")]  
+        [HttpPut("Update")]  
         public bool UpdatePerson(Person Object)  
         {  
             try  
@@ -63,17 +69,17 @@ namespace CourseworkWebApp.Controllers
             }  
         }
 
-        [HttpGet("GetAllPersons")]  
-        public Object GetAllPersons()  
-        {  
-            var data = _personService.GetAllPersons();  
-            var json = JsonConvert.SerializeObject(data, Formatting.Indented,  
-                new JsonSerializerSettings()  
-                {  
-                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore  
-                }  
-            );  
-            return json;  
-        }  
+        //[HttpGet("GetAll")]  
+        //public Object GetAllPersons()  
+        //{  
+        //    var data = _personService.GetAllPersons();  
+        //    var json = JsonConvert.SerializeObject(data, Formatting.Indented,  
+        //        new JsonSerializerSettings()  
+        //        {  
+        //            ReferenceLoopHandling = ReferenceLoopHandling.Ignore  
+        //        }  
+        //    );  
+        //    return json;  
+        //}  
     }
 }

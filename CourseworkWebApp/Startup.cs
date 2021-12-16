@@ -29,8 +29,12 @@ namespace CourseworkWebApp
             
             services.AddControllers();
             services.AddHttpClient();
+            
             services.AddTransient<IRepository<Person>, RepositoryPerson>();
             services.AddTransient<PersonService, PersonService>();
+            services.AddTransient<IRepository<ToDo>, ToDoListRepository>();
+            services.AddTransient<ToDoService, ToDoService>();
+            
             services.AddControllers();
             
             services.AddSwaggerGen(c =>  

@@ -11,9 +11,9 @@ namespace BLL.Services
     {
         private readonly IRepository<Person> _person;  
   
-        public PersonService(IRepository<Person> perosn)  
+        public PersonService(IRepository<Person> person)  
         {  
-            _person = perosn;  
+            _person = person;  
         }
 
         public async Task AddPerson(Person person)
@@ -32,6 +32,14 @@ namespace BLL.Services
         public IEnumerable<Person> GetAllPersons()
         {
             return _person.GetAll().ToList();
+        }
+
+        public int GetPersonId(Person o)
+        {
+            var username = o.UserName;
+            var pass = o.Password;
+            
+            return _person.GetAll().FirstOrDefault(x => x.UserName == username && x.Password == pass).ID;  
         }
 
         public bool DeletePerson(string username)  
