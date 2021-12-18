@@ -20,7 +20,7 @@ namespace DAL.Entities
         
         public string end_date_ToDo { get; set; }
         
-        public bool status_ToDo { get; set; }
+        public string status_ToDo { get; set; }
 
         public string description_ToDo { get; set; }
     }

@@ -13,20 +13,20 @@ namespace CourseworkWebApp.Controllers
     [ApiController]
     public class ToDoController : ControllerBase
     {
-        private readonly ToDoService _toDoService;  
-  
-        private readonly IRepository<ToDo> _repository;  
-  
-        public ToDoController(IRepository<ToDo> repository, ToDoService service)  
-        {  
-            _toDoService = service;  
-            _repository = repository;
-        }  
-        
-        [HttpPost("Add")]  
-        public async Task AddToDo([FromBody] ToDo o)  
+        private readonly ToDoService _toDoService;
+
+        private readonly IRepository<ToDo> _repository;
+
+        public ToDoController(IRepository<ToDo> repository, ToDoService service)
         {
-            await _toDoService.AddToDo(o);
+            _toDoService = service;
+            _repository = repository;
+        }
+
+        [HttpPost("Add")]
+        public async Task<int> AddToDo([FromBody] ToDo o)
+        {
+            return await _toDoService.AddToDo(o);
         }
 
         [HttpGet("GetAll/{id:int}")]
@@ -34,39 +34,24 @@ namespace CourseworkWebApp.Controllers
         {
             return _toDoService.GetAllToDoById(id);
         }
-        
+
         [HttpGet("Get")]
         public ToDo GetToDo([FromBody] int personId, int todoId)
         {
             return _toDoService.GetAllToDoById(personId).FirstOrDefault(x => x.ID == todoId);
         }
 
-        [HttpDelete("Delete")]  
-        public bool DeleteToDo([FromBody] ToDo o)  
-        {  
-            try  
-            {  
-                _toDoService.DeleteToDo(o);  
-                return true;  
-            }  
-            catch (Exception)  
-            {  
-                return false;  
-            }  
+        [HttpPost("Delete/{personId:int}/{toDoId:int}")]
+        public async Task<int> DeleteToDo(int personId, int toDoId)
+        {
+            var val = await _toDoService.DeleteToDo(personId, toDoId);
+            return val;
         }
 
-        [HttpPut("Update")]  
-        public bool UpdatePerson(ToDo o)  
-        {  
-            try  
-            {  
-                _toDoService.UpdateToDo(o);  
-                return true;  
-            }  
-            catch (Exception)  
-            {  
-                return false;  
-            }  
+        [HttpPost("Update/{personId:int}/{id:int}")]
+        public async Task<int> UpdatePerson([FromBody] ToDo toDo, int personId,int id)
+        {
+            return await _toDoService.UpdateToDo(toDo, personId, id);
         }
     }
 }
