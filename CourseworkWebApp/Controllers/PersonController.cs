@@ -68,18 +68,5 @@ namespace CourseworkWebApp.Controllers
                 return false;  
             }  
         }
-
-        //[HttpGet("GetAll")]  
-        //public Object GetAllPersons()  
-        //{  
-        //    var data = _personService.GetAllPersons();  
-        //    var json = JsonConvert.SerializeObject(data, Formatting.Indented,  
-        //        new JsonSerializerSettings()  
-        //        {  
-        //            ReferenceLoopHandling = ReferenceLoopHandling.Ignore  
-        //        }  
-        //    );  
-        //    return json;  
-        //}  
     }
 }

@@ -49,7 +49,7 @@ namespace CourseworkWebApp.Controllers
         }
 
         [HttpPost("Update/{personId:int}/{id:int}")]
-        public async Task<int> UpdatePerson([FromBody] ToDo toDo, int personId,int id)
+        public async Task<int> UpdateToDo([FromBody] ToDo toDo, int personId,int id)
         {
             return await _toDoService.UpdateToDo(toDo, personId, id);
         }

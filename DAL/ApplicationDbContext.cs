@@ -16,5 +16,7 @@ namespace DAL
 
         public DbSet<Person> Persons { get; set; } 
         public DbSet<ToDo> ToDos { get; set; } 
+        public DbSet<Bday> Bdays { get; set; }
+        public DbSet<Note> Notes { get; set; }
     }
 }

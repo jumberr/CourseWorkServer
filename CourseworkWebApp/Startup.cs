@@ -34,6 +34,10 @@ namespace CourseworkWebApp
             services.AddTransient<PersonService, PersonService>();
             services.AddTransient<IRepository<ToDo>, ToDoListRepository>();
             services.AddTransient<ToDoService, ToDoService>();
+            services.AddTransient<IRepository<Bday>, BdayRepository>();
+            services.AddTransient<BdayService, BdayService>();
+            services.AddTransient<IRepository<Note>, NoteRepository>();
+            services.AddTransient<NoteService, NoteService>();
             
             services.AddControllers();
             
